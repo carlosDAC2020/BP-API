@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargar Documentos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="file"] {
+            margin-bottom: 20px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cargar Documentos</h1>
+    <form action="http://127.0.0.1:5000/validaciones-kronos" method="post" enctype="multipart/form-data">
+        <label for="file1">Documento 1:</label>
+        <input type="file" id="file1" name="files" required><br><br>
+
+        <label for="file2">Documento 2:</label>
+        <input type="file" id="file2" name="files" required><br><br>
+
+        <label for="file3">Documento 3:</label>
+        <input type="file" id="file3" name="files" required><br><br>
+
+        <label for="file4">Documento 4:</label>
+        <input type="file" id="file4" name="files" required><br><br>
+
+        <input type="submit" value="Enviar Documentos">
+    </form>
+</body>
+</html>
