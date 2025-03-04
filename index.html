@@ -3,60 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cargar Documentos</title>
+    <title>Ejemplo de Página</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            line-height: 1.6;
+            background-color: #f4f4f9;
+            color: #28a745;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
         }
         h1 {
-            color: #333;
+            font-size: 36px;
         }
-        form {
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            background-color: #f9f9f9;
+        span {
+            font-size: 28px;
         }
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-        input[type="file"] {
-            margin-bottom: 20px;
-        }
-        input[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
+        .chat-bubble {
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #28a745;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             cursor: pointer;
+            color: white;
+            font-size: 24px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        input[type="submit"]:hover {
-            background-color: #45a049;
+        .chat-container {
+            position: fixed;
+            bottom: 80px;
+            right: 30px;
+            width: 25%;
+            height: 70%;
+            background: white;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: none;
+            border-radius: 8px;
+        }
+        .chat-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
     </style>
+    <script>
+        function toggleChat() {
+            var chat = document.getElementById("chatContainer");
+            chat.style.display = chat.style.display === "none" ? "block" : "none";
+        }
+    </script>
 </head>
 <body>
-    <h1>Cargar Documentos</h1>
-    <form action="http://127.0.0.1:5000/validaciones-kronos" method="post" enctype="multipart/form-data">
-        <label for="file1">Documento 1:</label>
-        <input type="file" id="file1" name="files" required><br><br>
+    <h1>Ejemplo de Página <br> <span>(el site de RH por ejemplo)</span></h1>
 
-        <label for="file2">Documento 2:</label>
-        <input type="file" id="file2" name="files" required><br><br>
-
-        <label for="file3">Documento 3:</label>
-        <input type="file" id="file3" name="files" required><br><br>
-
-        <label for="file4">Documento 4:</label>
-        <input type="file" id="file4" name="files" required><br><br>
-
-        <input type="submit" value="Enviar Documentos">
-    </form>
+    <div class="chat-bubble" onclick="toggleChat()">💬</div>
+    <div id="chatContainer" class="chat-container">
+        <iframe src="https://copilotstudio.microsoft.com/environments/Default-ea649e50-27d2-4318-9cb9-2fcffe16fd41/bots/cr579_agente/webchat?__version__=2"></iframe>
+    </div>
 </body>
 </html>
